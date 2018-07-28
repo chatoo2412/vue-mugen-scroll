@@ -42,6 +42,11 @@ var MugenScroll = {
       var this$1 = this;
 
       var execute = function () {
+        // The element can be removed
+        if (!this$1.$refs.scroll) {
+          return
+        }
+
         var inView = inViewport(this$1.$refs.scroll, {
           offset: this$1.offset,
           threshold: this$1.threshold
